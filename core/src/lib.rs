@@ -1,5 +1,10 @@
 use pyo3::prelude::*;
 
+// Reference the matrix sub-module layout explicitly
+pub mod common {
+    pub mod matrix;
+}
+
 /// Multiplies structural load profiles or vector factors at raw hardware speed.
 #[pyfunction]
 fn compute_hardware_stress_limit(load: f64, area: f64, safety_factor: f64) -> PyResult<f64> {
@@ -19,10 +24,20 @@ fn fast_scalar_dot_product(vector_a: Vec<f64>, vector_b: Vec<f64>) -> PyResult<f
     Ok(dot)
 }
 
-/// Unified entry point for the compiled compiled high-speed Rust core extension module
+/// Exposes the high-speed 2D matrix multiplication routine to Python interface layers.
+#[pyfunction]
+fn fast_matrix_multiply_2d(matrix_a: Vec<Vec<f64>>, matrix_b: Vec<Vec<f64>>) -> PyResult<Vec<Vec<f64>>> {
+    match common::matrix::multiply_matrices_2d(&matrix_a, &matrix_b) {
+        Ok(result) => Ok(result),
+        Err(err) => Err(pyo3::exceptions::PyValueError::new_err(err)),
+    }
+}
+
+/// Unified entry point for the compiled high-speed Rust core extension module
 #[pymodule]
 fn core_backend(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(compute_hardware_stress_limit, m)?)?;
     m.add_function(wrap_pyfunction!(fast_scalar_dot_product, m)?)?;
+    m.add_function(wrap_pyfunction!(fast_matrix_multiply_2d, m)?)?;
     Ok(())
 }
