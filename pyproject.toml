@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "setuptools-rust>=1.5.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mega_engineering_library"
+version = "0.1.0"
+description = "The ultimate, unified high-performance open-source computing library for 22 engineering disciplines."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Apache License 2.0"}
+authors = [
+    {name = "Yağız Yağlı"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+[tool.setuptools]
+packages = ["englib"]
