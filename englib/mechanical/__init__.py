@@ -3,3 +3,4 @@ Mechanical Engineering core modules including fluid mechanics, thermodynamics, a
 """
 
 from englib.mechanical.fluid_mechanics import FluidMechanics
+from englib.mechanical.thermodynamics import MechanicalThermodynamics
