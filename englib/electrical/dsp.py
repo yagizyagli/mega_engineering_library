@@ -5,7 +5,7 @@ Validated against standard signal processing literature (e.g., Oppenheim & Schaf
 """
 
 import math
-from typing import List, Complex
+from typing import List
 from englib.common.exceptions import GeometricViolationError, PhysicalBoundaryError
 
 class DigitalSignalProcessing:
