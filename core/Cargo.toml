@@ -2,15 +2,13 @@
 name = "mega_engineering_core"
 version = "0.1.0"
 edition = "2024"
-authors = ["Yağız Yağlı]
+authors = ["Yağız Yağlı"],
 description = "High-performance computational engine for Mega Engineering Library"
 
 [lib]
 name = "core_backend"
-crate-type = ["cdylib"] # Generates the .so file directly packageable for Python import profiles
+crate-type = ["cdylib"]
 
 [dependencies]
-# End-user high-speed Python-Rust bindings configuration bridge layer
 pyo3 = { version = "0.21", features = ["extension-module"] }
-# Multi-dimensional arrays and fast matrix operations library setup
 ndarray = "0.15"
