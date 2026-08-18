@@ -2,7 +2,7 @@
 name = "mega_engineering_core"
 version = "0.1.0"
 edition = "2024"
-authors = ["Yağız Yağlı"],
+authors = ["Yağız Yağlı"]
 description = "High-performance computational engine for Mega Engineering Library"
 
 [lib]
