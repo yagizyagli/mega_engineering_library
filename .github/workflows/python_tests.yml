@@ -17,10 +17,18 @@ jobs:
       with:
         python-version: '3.11'
         
-    - name: Install Testing Dependencies
+    - name: Set up Rust compiler
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Install Development Packages
+      run: |
+        sudo apt-get update && sudo apt-get install -y build-essential python3-dev
+
+    - name: Install and Compile Library
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
+        pip install pytest setuptools-rust
+        pip install -e .
         
     - name: Execute Pytest Suite
       run: |
