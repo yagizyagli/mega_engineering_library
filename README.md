@@ -144,7 +144,7 @@ Distributed under the **Apache License 2.0**. See `LICENSE` for more information
 
 This license allows absolute commercial usage, corporate proprietary integration, and open academic redistribution while offering strict defensive patent protection safeguards for the initial contributors.
 
-## 👑 Author & Founder
+## 👑 Author & Developer
 *   **Yağız Yağlı** ([@yagizyagli](https://github.com/yagizyagli))
 *   *Feel free to reach out for global academic collaborations, institutional deployments, or multi-disciplinary research initiatives.*
 
