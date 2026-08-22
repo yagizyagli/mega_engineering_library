@@ -89,7 +89,7 @@ Since `englib` utilizes a high-performance native Rust core backend, compiling t
 
 ```bash
 # Clone the unified multi-disciplinary repository
-git clone https://github.com/yagizyagli/mega_engineering_library
+git clone https://github.com
 cd mega_engineering_library
 
 # Install the library locally in editable developer mode (compiles the Rust core engine automatically)
